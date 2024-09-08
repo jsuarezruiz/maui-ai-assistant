@@ -20,6 +20,15 @@ The AI Assistant will then analyze the selected code and return it with detailed
 
 ![Comment](images/maui-ai-assistant-comment.gif)
 
+### Refactor Code
+
+Highlight the lines of code you want to refactor by clicking and dragging your mouse over them. Once the lines are selected, right-click on the highlighted area. From the context menu, select “.NET MAUI AI Assistant / Refactor”.
+
+The AI Assistant will analyze the selected code and return it refactored, improving its structure and readability without changing its behavior. This feature is particularly useful for optimizing your code, making it cleaner and easier to maintain.
+
+![Refactor](images/maui-ai-assistant-refactor.gif)
+
+## Tools
 
 ![Menu](images/maui-ai-assistant-tools-menu.png)
 
