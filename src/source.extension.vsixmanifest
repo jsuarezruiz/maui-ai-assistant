@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" ?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+    <Metadata>
+        <Identity Id="MAUI_AI_Assistant.a3e14c43-c8e1-4ec4-b59f-5ef1a9b77999" Version="1.0" Language="en-US" Publisher="Javier Suárez Ruiz" />
+        <DisplayName>.NET MAUI AI Assistant</DisplayName>
+        <Description xml:space="preserve">Enhance your .NET MAUI development experience with this AI-powered Visual Studio Extension. This extension integrates seamlessly into Visual Studio, providing a suite of AI-driven tools designed to boost productivity and streamline your workflow, including: icon creation, generate code from designs, code explanation, comment generation and more.</Description>
+        <Icon>Resources\Icon.png</Icon>
+        <PreviewImage>Resources\Icon.png</PreviewImage>
+        <Tags>AI, OpenAI, .NET MAUI, .NET</Tags>
+        <Preview>true</Preview>
+    </Metadata>
+    <Installation>
+        <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[17.0, 18.0)">
+            <ProductArchitecture>amd64</ProductArchitecture>
+        </InstallationTarget>
+    </Installation>
+    <Prerequisites>
+        <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[17.0,)" DisplayName="Visual Studio core editor" />
+    </Prerequisites>
+    <Assets>
+        <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
+    </Assets>
+</PackageManifest>

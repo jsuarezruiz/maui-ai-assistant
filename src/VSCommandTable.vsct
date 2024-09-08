@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<Extern href="stdidcmd.h"/>
+	<Extern href="vsshlids.h"/>
+	<Include href="KnownImageIds.vsct"/>
+	<Include href="VSGlobals.vsct"/>
+
+	<Commands package="MAUI_AI_Assistant">
+		<Groups>
+			<Group guid="MAUI_AI_Assistant" id="MAUI_AI_MenuGroup" />
+			<Group guid="MAUI_AI_Assistant" id="MAUI_AI_CommandGroup" />
+			<Group guid="MAUI_AI_Assistant" id="MAUI_AI_TopMenuGroup" />
+			<Group guid="MAUI_AI_Assistant" id="MAUI_AI_TopCommandGroup" />
+		</Groups>
+		<Menus>
+			<Menu guid="MAUI_AI_Assistant" id="MAUI_AI_Menu" type="Menu">
+				<Strings>
+					<ButtonText>.NET MAUI AI Assistant</ButtonText>
+				</Strings>
+			</Menu>
+			<Menu guid="MAUI_AI_Assistant" id="MAUI_AI_TopMenu" type="Menu">
+				<Strings>
+					<ButtonText>.NET MAUI AI Assistant</ButtonText>
+				</Strings>
+			</Menu>
+		</Menus>
+		<Buttons>
+			<Button guid="MAUI_AI_Assistant" id="Explain" priority="0x0100" type="Button">
+				<Icon guid="ImageCatalogGuid" id="DescriptionViewer" />
+				<CommandFlag>IconIsMoniker</CommandFlag>
+				<Strings>
+					<ButtonText>Explain</ButtonText>
+					<LocCanonicalName>.MAUI_AI_Assistant.Explain</LocCanonicalName>
+				</Strings>
+			</Button>
+			<Button guid="MAUI_AI_Assistant" id="Comment" priority="0x0200" type="Button">
+				<Icon guid="ImageCatalogGuid" id="AddComment" />
+				<CommandFlag>IconIsMoniker</CommandFlag>
+				<Strings>
+					<ButtonText>Comment</ButtonText>
+					<LocCanonicalName>.MAUI_AI_Assistant.Comment</LocCanonicalName>
+				</Strings>
+			</Button>
+			<Button guid="MAUI_AI_Assistant" id="CodeSuggestions" priority="0x0300" type="Button">
+				<Icon guid="ImageCatalogGuid" id="Refactoring" />
+				<CommandFlag>IconIsMoniker</CommandFlag>
+				<Strings>
+					<ButtonText>Code Suggestions</ButtonText>
+					<LocCanonicalName>.MAUI_AI_Assistant.CodeSuggestions</LocCanonicalName>
+				</Strings>
+			</Button>
+			<Button guid="MAUI_AI_Assistant" id="CreateUITest" priority="0x0400" type="Button">
+				<Icon guid="ImageCatalogGuid" id="AddTest" />
+				<CommandFlag>IconIsMoniker</CommandFlag>
+				<Strings>
+					<ButtonText>Create UITest (Experimental)</ButtonText>
+					<LocCanonicalName>.MAUI_AI_Assistant.CreateUITest</LocCanonicalName>
+				</Strings>
+			</Button>
+			<Button guid="MAUI_AI_Assistant" id="ConvertFromXamarinForms" priority="0x0500" type="Button">
+				<Icon guid="ImageCatalogGuid" id="ClassFile" />
+				<CommandFlag>IconIsMoniker</CommandFlag>
+				<Strings>
+					<ButtonText>Convert From Xamarin.Forms (Experimental)</ButtonText>
+					<LocCanonicalName>.MAUI_AI_Assistant.ConvertFromXamarinForms</LocCanonicalName>
+				</Strings>
+			</Button>
+			<Button guid="MAUI_AI_Assistant" id="CustomCommand" priority="0x0600" type="Button">
+				<CommandFlag>IconIsMoniker</CommandFlag>
+				<Strings>
+					<ButtonText>Custom Command</ButtonText>
+					<LocCanonicalName>.MAUI_AI_Assistant.CustomCommand</LocCanonicalName>
+				</Strings>
+			</Button>
+			<Button guid="MAUI_AI_Assistant" id="IconBuilder" priority="0x0700" type="Button">
+				<Icon guid="ImageCatalogGuid" id="Image" />
+				<CommandFlag>IconIsMoniker</CommandFlag>
+				<Strings>
+					<ButtonText>Icon Builder</ButtonText>
+					<LocCanonicalName>.MAUI_AI_Assistant.IconBuilder</LocCanonicalName>
+				</Strings>
+			</Button>
+			<Button guid="MAUI_AI_Assistant" id="ImageCreator" priority="0x0800" type="Button">
+				<Icon guid="ImageCatalogGuid" id="Image" />
+				<CommandFlag>IconIsMoniker</CommandFlag>
+				<Strings>
+					<ButtonText>Image Creator</ButtonText>
+					<LocCanonicalName>.MAUI_AI_Assistant.ImageCreator</LocCanonicalName>
+				</Strings>
+			</Button>
+			<Button guid="MAUI_AI_Assistant" id="DesignToCode" priority="0x0900" type="Button">
+				<Icon guid="ImageCatalogGuid" id="ClassFile" />
+				<CommandFlag>IconIsMoniker</CommandFlag>
+				<Strings>
+					<ButtonText>Design to Code</ButtonText>
+					<LocCanonicalName>.MAUI_AI_Assistant.DesignToCode</LocCanonicalName>
+				</Strings>
+			</Button>
+		</Buttons>
+	</Commands>
+	<CommandPlacements>
+		<CommandPlacement guid="MAUI_AI_Assistant" id="MAUI_AI_MenuGroup" priority="0x0100">
+			<Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_CODEWIN"/>
+		</CommandPlacement>
+		<CommandPlacement guid="MAUI_AI_Assistant" id="MAUI_AI_Menu" priority="0x0100">
+			<Parent guid="MAUI_AI_Assistant" id="MAUI_AI_MenuGroup"/>
+		</CommandPlacement>
+		<CommandPlacement guid="MAUI_AI_Assistant" id="MAUI_AI_CommandGroup" priority="0x0100">
+			<Parent guid="MAUI_AI_Assistant" id="MAUI_AI_Menu"/>
+		</CommandPlacement>
+		<CommandPlacement guid="MAUI_AI_Assistant" id="MAUI_AI_TopMenuGroup" priority="0x0100">
+			<Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_TOOLS" />
+		</CommandPlacement>
+		<CommandPlacement guid="MAUI_AI_Assistant" id="MAUI_AI_TopMenu" priority="0x0100">
+			<Parent guid="MAUI_AI_Assistant" id="MAUI_AI_TopMenuGroup"/>
+		</CommandPlacement>
+		<CommandPlacement guid="MAUI_AI_Assistant" id="MAUI_AI_TopCommandGroup" priority="0x0100">
+			<Parent guid="MAUI_AI_Assistant" id="MAUI_AI_TopMenu"/>
+		</CommandPlacement>
+		<CommandPlacement guid="MAUI_AI_Assistant" id="Explain" priority="0x0100">
+			<Parent guid="MAUI_AI_Assistant" id="MAUI_AI_CommandGroup"/>
+		</CommandPlacement>
+		<CommandPlacement guid="MAUI_AI_Assistant" id="Comment" priority="0x0200">
+			<Parent guid="MAUI_AI_Assistant" id="MAUI_AI_CommandGroup"/>
+		</CommandPlacement>
+		<CommandPlacement guid="MAUI_AI_Assistant" id="CodeSuggestions" priority="0x0300">
+			<Parent guid="MAUI_AI_Assistant" id="MAUI_AI_CommandGroup"/>
+		</CommandPlacement>
+		<CommandPlacement guid="MAUI_AI_Assistant" id="CreateUITest" priority="0x0400">
+			<Parent guid="MAUI_AI_Assistant" id="MAUI_AI_CommandGroup"/>
+		</CommandPlacement>
+		<CommandPlacement guid="MAUI_AI_Assistant" id="ConvertFromXamarinForms" priority="0x0500">
+			<Parent guid="MAUI_AI_Assistant" id="MAUI_AI_CommandGroup"/>
+		</CommandPlacement>
+		<CommandPlacement guid="MAUI_AI_Assistant" id="CustomCommand" priority="0x0600">
+			<Parent guid="MAUI_AI_Assistant" id="MAUI_AI_CommandGroup"/>
+		</CommandPlacement>
+		<CommandPlacement guid="MAUI_AI_Assistant" id="IconBuilder" priority="0x0700">
+			<Parent guid="MAUI_AI_Assistant" id="MAUI_AI_TopCommandGroup"/>
+		</CommandPlacement>
+		<CommandPlacement guid="MAUI_AI_Assistant" id="ImageCreator" priority="0x0800">
+			<Parent guid="MAUI_AI_Assistant" id="MAUI_AI_TopCommandGroup"/>
+		</CommandPlacement>
+		<CommandPlacement guid="MAUI_AI_Assistant" id="DesignToCode" priority="0x0900">
+			<Parent guid="MAUI_AI_Assistant" id="MAUI_AI_TopCommandGroup"/>
+		</CommandPlacement>
+	</CommandPlacements>
+	<Symbols>
+		<GuidSymbol name="MAUI_AI_Assistant" value="{06ff2d61-0d16-486b-aa7e-b980f603edf8}">
+			<IDSymbol name="MAUI_AI_MenuGroup" value="0x1000" />
+			<IDSymbol name="MAUI_AI_CommandGroup" value="0x1001" />
+			<IDSymbol name="MAUI_AI_Menu" value="0x1002" />
+			<IDSymbol name="MAUI_AI_TopMenuGroup" value="0x1003" />
+			<IDSymbol name="MAUI_AI_TopCommandGroup" value="0x1004" />
+			<IDSymbol name="MAUI_AI_TopMenu" value="0x1005" />
+			<IDSymbol name="Explain" value="0x0100" />
+			<IDSymbol name="Comment" value="0x0200" />
+			<IDSymbol name="CodeSuggestions" value="0x0300" />
+			<IDSymbol name="CreateUITest" value="0x0400" />
+			<IDSymbol name="ConvertFromXamarinForms" value="0x0500" />
+			<IDSymbol name="CustomCommand" value="0x0600" />
+			<IDSymbol name="IconBuilder" value="0x0700" />
+			<IDSymbol name="ImageCreator" value="0x0800" />
+			<IDSymbol name="DesignToCode" value="0x0900" />
+		</GuidSymbol>
+	</Symbols>
+
+</CommandTable>
