@@ -7,7 +7,7 @@ namespace MAUI_AI_Assistant
     {
         public static List<string> GetImages(string xaml)
         {
-            const string image = "https://placehold.co/100x100?description=";
+            const string image = "https://placehold.co/";
 
             List<string> images = new List<string>();
 
@@ -28,8 +28,9 @@ namespace MAUI_AI_Assistant
 
         public static string GetImageDescription(string image)
         {
-            const string placeholder = "https://placehold.co/100x100?description=";
-            string description = image.Remove(0, placeholder.Length);
+            const string placeholder = "description=";
+            int placeholderIndex = image.LastIndexOf(placeholder) + placeholder.Length;
+            string description = image.Remove(0, placeholderIndex);
             description = description.Replace("%20", " ");
 
             return description;
