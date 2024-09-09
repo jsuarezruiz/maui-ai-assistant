@@ -9,8 +9,20 @@ Enhance your **.NET MAUI** development experience with this **AI-powered Visual 
 An Azure subscription. 
 
 ## Setup
+
 Sign in with your Azure subscription in the Azure portal. Create an **Azure OpenAI** resource.
 
+![Azure Open AI](images/create-azure-openai-resource-portal.png)
+
+Before you can use the extension, you need to deploy a model. You manage different models from **[Azure OpenAI Studio](https://oai.azure.com/)**. The model needed for the library would be gpt-4 or gpt-4o for all context menus, actions like adding comments, refactoring etc.
+
+Although are optional, if you want to use tools like IconBuilder, you will need a dall-e-3 model. Whereas if you want to use Design to Code, you need a gpt-4 vision-preview model.
+
+After creating the resource and the model/s you just have to add the values ​​in the extension settings.
+
+![Settings](images/maui-ai-assistant-settings.PNG)
+
+## Functionality
 
 ![Menu](images/maui-ai-assistant-menu.png)
 
@@ -40,7 +52,7 @@ The AI Assistant will analyze the selected code and return it refactored, improv
 
 ## Tools
 
-![Menu](images/maui-ai-assistant-tools-menu.png)
+<img src="images/maui-ai-assistant-tools-menu.png" width="300">
 
 ### Icon Builder
 
@@ -49,4 +61,10 @@ Enter a prompt describing the icon you need. For example, you might type “vibr
 
 The AI Assistant will generate a set of icons based on your prompt. You can select the icon you want to use and download it. This feature is great for quickly creating custom icons tailored to your application’s needs.
 
-![Icon Builder](images/maui-ai-assistant-iconbuilder.gif)
+<img src="images/maui-ai-assistant-iconbuilder.gif" width="300">
+
+### Design to Code
+
+Can select a screenshot from a design or even a drawing. Utilizing the advanced capabilities of OpenAI’s GPT-4 Vision multimodal LLM, the extension transforms the provided screenshot and instructions into .NET MAUI code, simplifying the development process and enabling rapid prototyping and implementation of UI designs.
+
+![Design to Code](images/maui-ai-assistant-designtocode.gif)
