@@ -52,12 +52,14 @@ The AI Assistant will analyze the selected code and return it refactored, improv
 
 ## Tools
 
+You can find more AI tools in the **Tools** menu of Visual Studio.
+
 <img src="images/maui-ai-assistant-tools-menu.png" width="300">
 
 ### Icon Builder
 
 Click on Tools in the Visual Studio top menu, select .NET MAUI AI Assistant and click on Icon Builder.
-Enter a prompt describing the icon you need. For example, you might type “vibrant shopping cart”.
+Enter a prompt describing the icon you need. For example, you might type _“vibrant shopping cart”_.
 
 The AI Assistant will generate a set of icons based on your prompt. You can select the icon you want to use and download it. This feature is great for quickly creating custom icons tailored to your application’s needs.
 
