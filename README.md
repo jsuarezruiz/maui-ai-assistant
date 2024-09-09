@@ -24,7 +24,7 @@ After creating the resource and the model/s you just have to add the values â€‹â
 
 ## Functionality
 
-![Menu](images/maui-ai-assistant-menu.png)
+<img src="images/maui-ai-assistant-menu.png" width="500">
 
 ### Explain Code
 
@@ -54,7 +54,7 @@ The AI Assistant will analyze the selected code and return it refactored, improv
 
 You can find more AI tools in the **Tools** menu of Visual Studio.
 
-<img src="images/maui-ai-assistant-tools-menu.png" width="300">
+<img src="images/maui-ai-assistant-tools-menu.png" width="500">
 
 ### Icon Builder
 
