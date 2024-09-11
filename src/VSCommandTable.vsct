@@ -30,7 +30,7 @@
 				<Icon guid="ImageCatalogGuid" id="DescriptionViewer" />
 				<CommandFlag>IconIsMoniker</CommandFlag>
 				<Strings>
-					<ButtonText>Explain</ButtonText>
+					<ButtonText>Explain Code</ButtonText>
 					<LocCanonicalName>.MAUI_AI_Assistant.Explain</LocCanonicalName>
 				</Strings>
 			</Button>
@@ -38,7 +38,7 @@
 				<Icon guid="ImageCatalogGuid" id="AddComment" />
 				<CommandFlag>IconIsMoniker</CommandFlag>
 				<Strings>
-					<ButtonText>Comment</ButtonText>
+					<ButtonText>Comment Code</ButtonText>
 					<LocCanonicalName>.MAUI_AI_Assistant.Comment</LocCanonicalName>
 				</Strings>
 			</Button>
