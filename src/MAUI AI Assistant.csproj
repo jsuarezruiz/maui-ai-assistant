@@ -51,6 +51,7 @@
     <Compile Include="Commands\CodeSuggestions.cs" />
     <Compile Include="Commands\CommentCode.cs" />
     <Compile Include="Commands\ConvertFromXamarinForms.cs" />
+    <Compile Include="Commands\CreateMockData.cs" />
     <Compile Include="Commands\CreateUnitTest.cs" />
     <Compile Include="Commands\CreateUITest.cs" />
     <Compile Include="Commands\CustomCommand.cs" />

@@ -27,10 +27,11 @@ namespace MAUI_AI_Assistant
         public const int CodeFromComment = 0x0500;
         public const int CreateUnitTest = 0x0600;
         public const int CreateUITest = 0x0700;
-        public const int ConvertFromXamarinForms = 0x0800;
-        public const int CustomCommand = 0x0900;
-        public const int IconBuilder = 0x1100; 
-        public const int ImageCreator = 0x1200; 
-        public const int DesignToCode = 0x1300;
+        public const int CreateMockData = 0x0800;
+        public const int ConvertFromXamarinForms = 0x0900;
+        public const int CustomCommand = 0x1100;
+        public const int IconBuilder = 0x1200; 
+        public const int ImageCreator = 0x1300; 
+        public const int DesignToCode = 0x1400;
     }
 }
