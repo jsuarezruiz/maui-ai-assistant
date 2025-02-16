@@ -36,8 +36,21 @@ namespace MAUI_AI_Assistant.Commands
 
             twd.StartWaitDialog(".NET MAUI AI Assistant", "Working...", "", null, "", 1, false, true);
 
-            var docView = await VS.Documents.GetActiveDocumentViewAsync(); 
-            var selectedCode = string.IsNullOrEmpty(ChatMessage) ? docView.TextView.Selection.StreamSelectionSpan.GetText() : ChatMessage;
+            var docView = await VS.Documents.GetActiveDocumentViewAsync();
+            var selectedSpan = docView.TextView.Selection.SelectedSpans.FirstOrDefault();
+
+            if (selectedSpan.Length == 0)
+            {
+                var textBuffer = docView.TextView.TextBuffer;
+                var position = selectedSpan.Start.Position;
+                var line = textBuffer.CurrentSnapshot.GetLineFromPosition(position);
+                var snapshotSpan = new SnapshotSpan(line.Start, line.End);
+
+                docView.TextView.Selection.Select(snapshotSpan, false);
+                selectedSpan = docView.TextView.Selection.SelectedSpans.FirstOrDefault();
+            }
+            var selectedCode = docView.TextView.Selection.StreamSelectionSpan.GetText();
+            int selectedStartLineNumber = docView.TextView.TextBuffer.CurrentSnapshot.GetLineNumberFromPosition(selectedSpan.Start.Position);
 
             if (string.IsNullOrEmpty(selectedCode))
             {
@@ -70,18 +83,16 @@ namespace MAUI_AI_Assistant.Commands
 
                 twd.EndWaitDialog();
 
-                var selection = docView.TextView.Selection.SelectedSpans.FirstOrDefault();
-
                 switch (CommandBehavior)
                 {
                     case CommandBehavior.Dialog:
                         await VS.MessageBox.ShowAsync(result, buttons: OLEMSGBUTTON.OLEMSGBUTTON_OK);
                         break;
                     case CommandBehavior.Insert:
-                        docView.TextBuffer.Insert(selection.End, Environment.NewLine + result);
+                        docView.TextBuffer.Insert(selectedSpan.End, Environment.NewLine + result);
                         break;
                     case CommandBehavior.Replace:
-                        docView.TextBuffer.Replace(selection, result);
+                        docView.TextBuffer.Replace(selectedSpan, result);
                         break;
                 } 
             }
@@ -91,18 +102,17 @@ namespace MAUI_AI_Assistant.Commands
                 await VS.MessageBox.ShowAsync(ex.Message, buttons: OLEMSGBUTTON.OLEMSGBUTTON_OK);
             }
 
-            var hasSelection = docView.TextView.Selection.SelectedSpans.FirstOrDefault().Length != 0;
-
-            if (!hasSelection)
+            if (CommandBehavior != CommandBehavior.Dialog) // Format selected code
             {
-                var selection = docView.TextView.Selection.SelectedSpans.FirstOrDefault();
-                int selectionStartLineNumber = docView.TextView.TextBuffer.CurrentSnapshot.GetLineNumberFromPosition(selection.Start.Position);
-
-                var startLine = docView.TextView.TextBuffer.CurrentSnapshot.GetLineFromLineNumber(selectionStartLineNumber);
-                var endLine = docView.TextView.TextBuffer.CurrentSnapshot.GetLineFromPosition(selection.End);
-                var snapshotSpan = new SnapshotSpan(startLine.Start, endLine.End);
-
-                docView.TextView.Selection.Select(snapshotSpan, false);
+                selectedSpan = docView.TextView.Selection.SelectedSpans.FirstOrDefault();
+              
+                if (selectedSpan.Length == 0)
+                {
+                    var startLine = docView.TextView.TextBuffer.CurrentSnapshot.GetLineFromLineNumber(selectedStartLineNumber);
+                    var endLine = docView.TextView.TextBuffer.CurrentSnapshot.GetLineFromPosition(selectedSpan.End);
+                    var snapshotSpan = new SnapshotSpan(startLine.Start, endLine.End);
+                    docView.TextView.Selection.Select(snapshotSpan, false);
+                }
             }
 
             (await VS.GetServiceAsync<DTE, DTE>()).ExecuteCommand("Edit.FormatSelection");
