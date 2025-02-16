@@ -44,11 +44,10 @@ namespace MAUI_AI_Assistant.Commands
                 var textBuffer = docView.TextView.TextBuffer;
                 var position = selectedSpan.Start.Position;
                 var line = textBuffer.CurrentSnapshot.GetLineFromPosition(position);
-                var snapshotSpan = new SnapshotSpan(line.Start, line.End);
-
-                docView.TextView.Selection.Select(snapshotSpan, false);
+                SelectText(docView, line.Start, line.End);
                 selectedSpan = docView.TextView.Selection.SelectedSpans.FirstOrDefault();
             }
+
             var selectedCode = docView.TextView.Selection.StreamSelectionSpan.GetText();
             int selectedStartLineNumber = docView.TextView.TextBuffer.CurrentSnapshot.GetLineNumberFromPosition(selectedSpan.Start.Position);
 
@@ -110,14 +109,20 @@ namespace MAUI_AI_Assistant.Commands
                 {
                     var startLine = docView.TextView.TextBuffer.CurrentSnapshot.GetLineFromLineNumber(selectedStartLineNumber);
                     var endLine = docView.TextView.TextBuffer.CurrentSnapshot.GetLineFromPosition(selectedSpan.End);
-                    var snapshotSpan = new SnapshotSpan(startLine.Start, endLine.End);
-                    docView.TextView.Selection.Select(snapshotSpan, false);
+                    SelectText(docView, startLine.Start, endLine.End);
                 }
             }
 
             (await VS.GetServiceAsync<DTE, DTE>()).ExecuteCommand("Edit.FormatSelection");
         }
         
+
+        void SelectText(DocumentView docView, SnapshotPoint start, SnapshotPoint end)
+        {
+            var snapshotSpan = new SnapshotSpan(start, end);
+            docView.TextView.Selection.Select(snapshotSpan, false);
+        }
+
         string SanitizeResult(string response)
         {
             var regex = new Regex(@"```.*\r?\n?");
