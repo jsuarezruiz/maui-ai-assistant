@@ -51,6 +51,7 @@
     <Compile Include="Commands\CodeSuggestions.cs" />
     <Compile Include="Commands\CommentCode.cs" />
     <Compile Include="Commands\ConvertFromXamarinForms.cs" />
+    <Compile Include="Commands\CreateUnitTest.cs" />
     <Compile Include="Commands\CreateUITest.cs" />
     <Compile Include="Commands\CustomCommand.cs" />
     <Compile Include="Commands\ExplainCode.cs" />
@@ -60,6 +61,7 @@
     <Compile Include="Commands\ShowImageCreator.cs" />
     <Compile Include="Options\CustomCommand.cs" />
     <Compile Include="Options\General.cs" />
+    <Compile Include="Options\UnitTest.cs" />
     <Compile Include="PromptConstants.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MAUIAIAssistantPackage.cs" />
@@ -93,6 +95,7 @@
       <DependentUpon>ImageCreatorControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="ToolWindows\ImageCreatorViewModel.cs" />
+    <Compile Include="UnitTestFramework.cs" />
     <Compile Include="VSCommandTable.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
