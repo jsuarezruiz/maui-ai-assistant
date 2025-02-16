@@ -54,7 +54,7 @@
 				<Icon guid="ImageCatalogGuid" id="AddTest" />
 				<CommandFlag>IconIsMoniker</CommandFlag>
 				<Strings>
-					<ButtonText>Create UITest (Experimental)</ButtonText>
+					<ButtonText>Create UITest</ButtonText>
 					<LocCanonicalName>.MAUI_AI_Assistant.CreateUITest</LocCanonicalName>
 				</Strings>
 			</Button>
