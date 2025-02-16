@@ -22,7 +22,7 @@ namespace MAUI_AI_Assistant
     {
         protected override async Task InitializeAsync(CancellationToken cancellationToken, IProgress<ServiceProgressData> progress)
         {          
-            // Tool windows
+            // Tool Windows
             this.RegisterToolWindows();
 
             // Commands

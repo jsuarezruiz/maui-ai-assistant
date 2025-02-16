@@ -46,6 +46,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="CommandBehavior.cs" />
+    <Compile Include="Commands\AddSummary.cs" />
+    <Compile Include="Commands\CodeFromComment.cs" />
     <Compile Include="Commands\CodeSuggestions.cs" />
     <Compile Include="Commands\CommentCode.cs" />
     <Compile Include="Commands\ConvertFromXamarinForms.cs" />
