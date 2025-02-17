@@ -21,11 +21,10 @@ namespace MAUI_AI_Assistant.Commands
             Create a class with UI Test methods for {PromptConstants.Framework}." +
             $"- Use the extension methods from https://github.com/dotnet/maui/blob/d6cc8154b47e53290571fe465de56ce9632e5f4c/src/TestUtils/src/UITest.Appium/HelperExtensions.cs#L11" +
             $"- Use the tests from https://github.com/dotnet/maui/tree/d6cc8154b47e53290571fe465de56ce9632e5f4c/src/Controls/tests/TestCases.Shared.Tests/Tests as reference." +
-            $"- Include comments with explanations." +
-            $"- Use UITest class as base class to inherit from.";
+            $"- Use UITest class as base class to inherit from." +
+            $"- Write only the code, not the explanation.";
 
             ChatMessage = await GetCodeAsync();
-
             CommandBehavior = CommandBehavior.Insert;
 
             await base.ExecuteAsync(e);

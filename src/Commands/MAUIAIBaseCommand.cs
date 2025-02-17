@@ -48,7 +48,7 @@ namespace MAUI_AI_Assistant.Commands
                 selectedSpan = docView.TextView.Selection.SelectedSpans.FirstOrDefault();
             }
 
-            var selectedCode = docView.TextView.Selection.StreamSelectionSpan.GetText();
+            var selectedCode = ChatMessage ?? docView.TextView.Selection.StreamSelectionSpan.GetText();
             int selectedStartLineNumber = docView.TextView.TextBuffer.CurrentSnapshot.GetLineNumberFromPosition(selectedSpan.Start.Position);
 
             if (string.IsNullOrEmpty(selectedCode))
