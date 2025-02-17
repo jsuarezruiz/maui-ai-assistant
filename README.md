@@ -1,7 +1,5 @@
 # .NET MAUI AI Assistant
 
-_Work in progress_
-
 Enhance your **.NET MAUI** development experience with this **AI-powered Visual Studio Extension**. This extension integrates seamlessly into Visual Studio, providing a suite of AI-driven tools designed to boost productivity and streamline your workflow, including: icon creation, generate code from designs, code explanation, comment generation and more.
 
 ## Prerequisites
@@ -42,6 +40,13 @@ The AI Assistant will then analyze the selected code and return it with detailed
 
 ![Comment](images/maui-ai-assistant-comment.gif)
 
+## Create Summary
+
+Click and drag your mouse over the lines of code you want to create a summary.
+The AI Assistant will then analyze the selected method's code, including comments, and implementation details, to produce a human-readable summary that highlights the method's purpose, key steps, and important parameters.
+
+![Summary](images/maui-ai-assistant-add-summary.gif)
+
 ### Refactor Code
 
 Highlight the lines of code you want to refactor by clicking and dragging your mouse over them. Once the lines are selected, right-click on the highlighted area. From the context menu, select “.NET MAUI AI Assistant / Refactor”.
@@ -49,6 +54,20 @@ Highlight the lines of code you want to refactor by clicking and dragging your m
 The AI Assistant will analyze the selected code and return it refactored, improving its structure and readability without changing its behavior. This feature is particularly useful for optimizing your code, making it cleaner and easier to maintain.
 
 ![Refactor](images/maui-ai-assistant-refactor.gif)
+
+## Create Unit Tests
+
+Click and drag your mouse over the lines of code you want to create unit tests.
+The AI Assistant will then analyze the source code, including its logic, and input/output behaviors, to generate comprehensive and effective unit tests that ensure the reliability and robustness of the codebase.
+
+![Unit Tests](images/maui-ai-assistant-create-unit-test.gif)
+
+## Create UI Tests
+
+Click and drag your mouse over the lines of code you want to create ui tests or right click on the code of a C# page or the code-behind of a XAML page.
+The AI Assistant will generate comprehensive and effective UI tests that ensure the seamless performance and user experience of the application across different devices and platforms.
+
+![UI Tests](images/maui-ai-assistant-create-uitests.gif)
 
 ## Tools
 
